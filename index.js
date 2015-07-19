@@ -24,9 +24,9 @@ var NoticeSchema = mongoose.Schema({
 var Notice = mongoose.model('Notice', NoticeSchema);
 
 // Setup templating
-var ReactEngine = require('express-react-engine');
+var reactEngine = require('express-react-engine');
 app.set('views', __dirname + '/components');
-app.engine('jsx', ReactEngine({wrapper: 'html.jsx'}));
+app.engine('jsx', reactEngine({wrapper: 'html.jsx'}));
 
 // Define routes
 

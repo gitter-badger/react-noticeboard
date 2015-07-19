@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "grunt test"
   },
   "author": "Matthew Daly <matthewbdaly@gmail.com> (http://matthewdaly.co.uk/)",
   "license": "ISC",
@@ -15,5 +15,10 @@
     "morgan": "^1.6.1",
     "node-jsx": "^0.13.3",
     "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-reactify": "0.0.2"
   }
 }
