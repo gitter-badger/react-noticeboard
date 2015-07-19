@@ -1,0 +1,25 @@
+{
+  "name": "react-noticeboard",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Matthew Daly <matthewbdaly@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "sass-bootstrap": "~3.0.2",
+    "react": "~0.13.3"
+  }
+}
