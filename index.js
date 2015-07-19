@@ -23,11 +23,16 @@ var NoticeSchema = mongoose.Schema({
 });
 var Notice = mongoose.model('Notice', NoticeSchema);
 
+// Setup templating
+var ReactEngine = require('express-react-engine');
+app.set('views', __dirname + '/components');
+app.engine('jsx', ReactEngine({wrapper: 'html.jsx'}));
+
 // Define routes
 
 // Main route
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index.jsx');
 });
 
 // Serve static files
