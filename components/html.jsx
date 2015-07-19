@@ -8,7 +8,7 @@ var Html = React.createClass({
           <title>Isomorphic JavaScript for the win</title>
         </head>
         <body>
-            <h1>This is Isomorphic JavaScript in action</h1>
+            <div id='view' dangerouslySetInnerHTML={{__html: this.props.body}} />
         </body>
       </html>
     );
