@@ -32,6 +32,7 @@ var Index = React.createClass({displayName: "Index",
     });
     return (
         React.createElement("div", null, 
+          React.createElement("h1", null, "Noticeboard"), 
           React.createElement(NoticeForm, null), 
           React.createElement("div", {className: "noticeList"}, 
             noticeNodes

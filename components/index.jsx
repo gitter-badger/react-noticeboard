@@ -31,6 +31,7 @@ var Index = React.createClass({
     });
     return (
         <div>
+          <h1>Noticeboard</h1>
           <NoticeForm />
           <div className="noticeList">
             {noticeNodes}
