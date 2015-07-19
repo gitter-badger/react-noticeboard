@@ -11,6 +11,17 @@ var Notice = React.createClass({displayName: "Notice",
   }
 });
 
+var NoticeForm = React.createClass({displayName: "NoticeForm",
+  render: function () {
+    return (
+      React.createElement("form", {onSubmit: this.handleSubmit}, 
+        React.createElement("textarea", {placeholder: "Your notice...", ref: "text"}), 
+        React.createElement("input", {type: "submit", value: "Post"})
+      )
+    );
+  }
+});
+
 var Index = React.createClass({displayName: "Index",
   render: function () {
     var noticeNodes = this.props.notices.map(function (notice, index) {
@@ -20,8 +31,11 @@ var Index = React.createClass({displayName: "Index",
       );
     });
     return (
-        React.createElement("div", {className: "noticeList"}, 
-          noticeNodes
+        React.createElement("div", null, 
+          React.createElement(NoticeForm, null), 
+          React.createElement("div", {className: "noticeList"}, 
+            noticeNodes
+          )
         )
     );
   }

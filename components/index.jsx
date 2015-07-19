@@ -10,6 +10,17 @@ var Notice = React.createClass({
   }
 });
 
+var NoticeForm = React.createClass({
+  render: function () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <textarea placeholder="Your notice..." ref="text" />
+        <input type="submit" value="Post" />
+      </form>
+    );
+  }
+});
+
 var Index = React.createClass({
   render: function () {
     var noticeNodes = this.props.notices.map(function (notice, index) {
@@ -19,8 +30,11 @@ var Index = React.createClass({
       );
     });
     return (
-        <div className="noticeList">
-          {noticeNodes}
+        <div>
+          <NoticeForm />
+          <div className="noticeList">
+            {noticeNodes}
+          </div>
         </div>
     );
   }

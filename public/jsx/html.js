@@ -6,11 +6,17 @@ var Html = React.createClass({displayName: "Html",
     return (
       React.createElement("html", null, 
         React.createElement("head", null, 
-          React.createElement("title", null, "Isomorphic JavaScript for the win")
+          React.createElement("title", null, "Isomorphic JavaScript for the win"), 
+          React.createElement("link", {rel: "stylesheet", type: "text/css", href: "/bower_components/sass-bootstrap/dist/css/bootstrap.min.css"}), 
+          React.createElement("link", {rel: "stylesheet", type: "text/css", href: "/bower_components/sass-bootstrap/dist/css/bootstrap-theme.min.css"})
         ), 
         React.createElement("body", null, 
             React.createElement("div", {id: "view", dangerouslySetInnerHTML: {__html: this.props.body}})
-        )
+        ), 
+        React.createElement("script", {language: "javascript", type: "text/javascript", src: "/bower_components/jquery/dist/jquery.min.js"}), 
+        React.createElement("script", {language: "javascript", type: "text/javascript", src: "/bower_components/sass-bootstrap/dist/js/bootstrap.min.js"}), 
+        React.createElement("script", {language: "javascript", type: "text/javascript", src: "/bower_components/react/react.min.js"}), 
+        React.createElement("script", {language: "javascript", type: "text/javascript", src: "/jsx/index.js"})
       )
     );
   }
