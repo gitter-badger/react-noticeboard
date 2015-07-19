@@ -2,29 +2,29 @@
 "use strict";
 
 // Declare variables used
-var app, express, mongoose, port;
+var app, express, mongoose, NoticeSchema, Notice, port, reactEngine, uristring;
 
 // Define values
 express = require("express");
 app = express();
 mongoose = require('mongoose');
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/react-noticeboard';
+uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/react-noticeboard';
 port = process.env.PORT || 5000;
 
 // Connect to the database
 mongoose.connect(uristring);
 
 // Create a model for the notices
-var NoticeSchema = mongoose.Schema({
+NoticeSchema = mongoose.Schema({
   text: {
     type: String,
     match: /^(\w+)/
   }
 });
-var Notice = mongoose.model('Notice', NoticeSchema);
+Notice = mongoose.model('Notice', NoticeSchema);
 
 // Setup templating
-var reactEngine = require('express-react-engine');
+reactEngine = require('express-react-engine');
 app.set('views', __dirname + '/components');
 app.engine('jsx', reactEngine({wrapper: 'html.jsx'}));
 
