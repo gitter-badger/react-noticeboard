@@ -32,7 +32,24 @@ app.engine('jsx', ReactEngine({wrapper: 'html.jsx'}));
 
 // Main route
 app.get('/', function (req, res) {
-  res.render('index.jsx');
+  Notice.find(function (err, notices) {
+    if (err) {
+      console.log('Error: ' + err);
+    } else {
+      res.render('index.jsx', notices);
+    }
+  });
+});
+
+// Notices route
+app.get('/notices', function (req, res) {
+  Notice.find(function (err, notices) {
+    if (err) {
+      console.log('Error: ' + err);
+    } else {
+      res.json(notices);
+    }
+  });
 });
 
 // Serve static files
