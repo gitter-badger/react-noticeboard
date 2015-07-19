@@ -33,4 +33,16 @@ describe('server', function () {
             });
         });
     });
+
+    // Test the notices route
+    describe('Test the notices route', function () {
+        it('should return JSON', function (done) {
+            request.get({ url: 'http://localhost:5000/notices' }, function (error, response, body) {
+                expect(response.statusCode).to.equal(200);
+                expect(response.headers['content-type']).to.equal('application/json; charset=utf-8');
+                done();
+            });
+        });
+    });
+
 });
