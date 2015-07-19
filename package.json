@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "author": "Matthew Daly <matthewbdaly@gmail.com> (http://matthewdaly.co.uk/)",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.1",
+    "express-react-engine": "^0.4.4",
     "mongoose": "^4.0.7",
     "morgan": "^1.6.1",
     "node-jsx": "^0.13.3",
