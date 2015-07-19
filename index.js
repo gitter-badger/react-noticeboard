@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
     if (err) {
       console.log('Error: ' + err);
     } else {
-      res.render('index.jsx', notices);
+      res.render('index.jsx', { notices: notices });
     }
   });
 });
