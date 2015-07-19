@@ -14,8 +14,10 @@ var NoticeForm = React.createClass({
   render: function () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <textarea placeholder="Your notice..." ref="text" />
-        <input type="submit" value="Post" />
+        <div className="form-group">
+          <textarea className="form-control" placeholder="Your notice..." ref="text" />
+        </div>
+        <input type="submit" className="btn btn-primary" value="Post" />
       </form>
     );
   }

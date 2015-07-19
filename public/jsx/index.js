@@ -15,8 +15,10 @@ var NoticeForm = React.createClass({displayName: "NoticeForm",
   render: function () {
     return (
       React.createElement("form", {onSubmit: this.handleSubmit}, 
-        React.createElement("textarea", {placeholder: "Your notice...", ref: "text"}), 
-        React.createElement("input", {type: "submit", value: "Post"})
+        React.createElement("div", {className: "form-group"}, 
+          React.createElement("textarea", {className: "form-control", placeholder: "Your notice...", ref: "text"})
+        ), 
+        React.createElement("input", {type: "submit", className: "btn btn-primary", value: "Post"})
       )
     );
   }
